@@ -27,6 +27,10 @@ You can also set the `RMATE_HOST` and `RMATE_PORT` environment variables.
 
 For more info see this [blog post about rmate](http://blog.macromates.com/2011/mate-and-rmate/ "TextMate Blog » mate and rmate").
 
+#Patch
+	rmate .
+	Give you a chance to edit all file in a directory.
+
 # Ports
 
 - [Bash](https://github.com/aurora/rmate) by Harald Lapp
