@@ -171,8 +171,8 @@ ARGV.each_index do |idx|
     Dir.glob("#{File.absolute_path(path)}/*").each do |f|
          if File.ftype(f) == "file"
             cmd                 = Command.new("open")
-            cmd['display-name'] = "#{Socket.gethostname}:#{f}"
-            #cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
+            cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{f.to_s.split("/")[-2..-1].join("$")}"
+            cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
             cmd['real-path']    = File.expand_path(f)
             cmd['data-on-save'] = true
             cmd['re-activate']  = true
@@ -186,8 +186,8 @@ ARGV.each_index do |idx|
       end
   else
   cmd                 = Command.new("open")
-  cmd['display-name'] = "#{Socket.gethostname}:#{path}"
-  #cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
+  cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{f.to_s.split("/")[-2..-1].join("$")}"
+  cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
   cmd['real-path']    = File.expand_path(path)
   cmd['data-on-save'] = true
   cmd['re-activate']  = true
