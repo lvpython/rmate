@@ -186,7 +186,7 @@ ARGV.each_index do |idx|
       end
   else
   cmd                 = Command.new("open")
-  cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{f.to_s.split("/")[-2..-1].join("$")}"
+  cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{path.to_s.split("/")[-2..-1].join("$")}"
   cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
   cmd['real-path']    = File.expand_path(path)
   cmd['data-on-save'] = true
