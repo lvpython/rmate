@@ -7,11 +7,14 @@ If you wish to activate TextMate from an ssh session you can do so by copying th
 # Install
 
 You can install `rmate` via `gem`:
-
-  gem install specific_install
-  gem specific_install -l https://github.com/lvpython/rmate.git
+  
+	gem install specific_install
+	gem specific_install -l https://github.com/lvpython/rmate.git
+  
 
 # Usage
+	rmate .
+Edit all file under pwd current directory.
 
 	rmate [options] file
 
@@ -23,10 +26,6 @@ Call `rmate --help` for a list of options. Default options can be set in `/etc/r
 You can also set the `RMATE_HOST` and `RMATE_PORT` environment variables.
 
 For more info see this [blog post about rmate](http://blog.macromates.com/2011/mate-and-rmate/ "TextMate Blog » mate and rmate").
-
-	rmate .
-
-	Give you a chance to edit all file under pwd current directory.
 
 # Ports from
 
