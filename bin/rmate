@@ -168,7 +168,7 @@ ARGV.each_index do |idx|
   abort "File #{path} is not writable! Use -f/--force to open anyway." unless $settings.force or File.writable? path or not File.exists? path
   $stderr.puts "File #{path} is not writable. Opening anyway." if not File.writable? path and File.exists? path and $settings.verbose
   if File.ftype(path) == "directory"
-    Dir.glob("#{File.absolute_path(path)}/*").each do |f|
+    Dir.glob("#{File.expand_path(path)}/*").each do |f|
          if File.ftype(f) == "file"
             cmd                 = Command.new("open")
             cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{f.to_s.split("/")[-2..-1].join("$")}"
