@@ -185,10 +185,11 @@ ARGV.each_index do |idx|
          end
       end
   else
+  file_path = File.expand_path(path)
   cmd                 = Command.new("open")
-  cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{path.to_s.split("/")[-2..-1].join("$")}"
+  cmd['display-name'] = "#{Socket.gethostname.to_s.split(".")[0]}$#{(file_path.to_s.split("/")[-2..-1].join("$") rescue file_path)}"
   cmd['display-name'] = $settings.names[idx] if $settings.names.length > idx
-  cmd['real-path']    = File.expand_path(path)
+  cmd['real-path']    = file_path
   cmd['data-on-save'] = true
   cmd['re-activate']  = true
   cmd['token']        = path
